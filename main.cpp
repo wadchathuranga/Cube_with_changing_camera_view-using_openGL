@@ -1,17 +1,6 @@
 #include <GL/glut.h>
 
-//GLfloat T = 0;
 GLfloat Cx=0,Cy=0,Cz=3;   // for camera view change
-
-/*
-void Spin()
-{
-    T = T + 1;
-    if (T > 360)
-        T = 0;
-    glutPostRedisplay();
-}
-*/
 
 void MyInit()
 {
@@ -77,7 +66,6 @@ void display(void)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glLoadIdentity();
-    //glRotatef(T,1,1,0);
 
     gluLookAt(Cx,Cy,Cz,0,0,0,0,1,0);  // for camera view change
 
@@ -118,7 +106,6 @@ int main(int argc, char *argv[])
     MyInit();
     glutDisplayFunc(display);
     glutKeyboardFunc(Key);    // for camera view change
-    //glutIdleFunc(Spin);
     glutMainLoop();
     return 0;
 }
